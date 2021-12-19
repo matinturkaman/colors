@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { Divider } from "@chakra-ui/react";
 import domtoimage from "dom-to-image";
+import palettes from "../data/colors";
 
 const ColorDetail = ({ location }) => {
   const [copied, setCopied] = useState(false);
@@ -180,7 +181,7 @@ const ColorDetail = ({ location }) => {
             >
               3,456
             </Button>
-            <a href={source} download="color palette">
+            <a href={source} download={`color ${location.state.p.category}`}>
               <Button
                 leftIcon={<AiOutlineDownload fontSize="18px" color="#646464" />}
                 bg="none"

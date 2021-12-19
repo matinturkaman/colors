@@ -33,13 +33,12 @@ const PalettesComp = () => {
           .join(" ")
           .toLowerCase()
           .includes(search.toLowerCase());
-        });
+      });
       setAllPalette(filtredSearch);
     } else {
       setAllPalette(palettes);
     }
   };
-
 
   const toggleCopy = () => {
     setCopied(true);
@@ -59,24 +58,32 @@ const PalettesComp = () => {
         justifyContent="space-between"
         p="15px"
       >
-        <Flex>
+        <Flex
+          display={{
+            base: "none",
+            sm: "none",
+            md: "flex",
+            lg: "flex",
+            xl: "flex",
+          }}
+        >
           <Text color="#7A7A86">
             Find the perfect palette by mixing search terms.
           </Text>
         </Flex>
-        <Flex>
-          <InputGroup>
-            <InputLeftElement children={<FiSearch color="#7A7A86" />} />
-            <Input
-              value={search}
-              onChange={handleChange}
-              placeholder="Search"
-              focusBorderColor="#8000FF"
-            />
-          </InputGroup>
-        </Flex>
+        <InputGroup
+          w={{ base: "100%", sm: "100%", md: "30%", lg: "30%", xl: "30%" }}
+        >
+          <InputLeftElement children={<FiSearch color="#7A7A86" />} />
+          <Input
+            value={search}
+            onChange={handleChange}
+            placeholder="Search"
+            focusBorderColor="#8000FF"
+          />
+        </InputGroup>
       </Flex>
-      <Flex w="full" minH="300px" flexWrap="wrap" justifyContent="space-evenly">
+      <Flex w="90%" minH="300px" flexWrap="wrap" justifyContent="space-evenly">
         {allPalette.map((p) => {
           return (
             <Flex
@@ -230,7 +237,12 @@ const PalettesComp = () => {
                     </Button>
                   </Link>
                 </Flex>
-                <Text mr="15px" color="#646464" fontWeight="medium">
+                <Text
+                  mr="15px"
+                  color="#646464"
+                  fontWeight="medium"
+                  display={{ base: "none", sm: "flex", lg: "flex", xl: "flex" }}
+                >
                   9 months
                 </Text>
               </Flex>

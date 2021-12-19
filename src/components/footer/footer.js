@@ -7,8 +7,7 @@ import { Flex, Heading } from "@chakra-ui/layout";
 const Footer = () => {
   return (
     <Flex
-      h="320px"
-      position="absolute"
+      h="auto"
       bg="#FAFAFA"
       right="0"
       left="0"
@@ -17,9 +16,18 @@ const Footer = () => {
       alignItems="center"
       flexDirection="column"
     >
-      <Flex w="70%" flexDirection="column" position="absolute">
-        <Flex justifyContent="space-between">
-          <Flex flexDirection="column">
+      <Flex w="70%" flexDirection="column">
+        <Flex
+          flexDir={{
+            base: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          }}
+          justifyContent="space-between"
+        >
+          <Flex flexDirection="column" mt="20px">
             <Heading fontSize="24">Website</Heading>
             <Link to="/explore">
               <Text color="#B1B1B1" mt="15px">
@@ -37,7 +45,7 @@ const Footer = () => {
               </Text>
             </Link>
           </Flex>
-          <Flex flexDirection="column">
+          <Flex flexDirection="column" mt="20px">
             <Heading fontSize="24">Company</Heading>
             <Link to="/">
               <Text color="#B1B1B1" mt="15px">
@@ -65,7 +73,7 @@ const Footer = () => {
               </Text>
             </Link>
           </Flex>
-          <Flex flexDirection="column">
+          <Flex flexDirection="column" mt="20px">
             <Heading fontSize="24">Product</Heading>
             <Link to="/">
               <Text color="#B1B1B1" mt="15px">
@@ -86,7 +94,7 @@ const Footer = () => {
               </Text>
             </Link>
           </Flex>
-          <Flex flexDirection="column">
+          <Flex flexDirection="column" mt="20px">
             <Heading fontSize="24">Account</Heading>
             <Link to="/">
               <Text color="#B1B1B1" mt="15px">
@@ -105,8 +113,8 @@ const Footer = () => {
             </Link>
           </Flex>
         </Flex>
-        <Flex justifyContent="space-between" alignItems="center">
-          <Flex alignItems="center">
+        <Flex justifyContent="space-between" alignItems="center" mt="20px">
+          <Flex alignItems="center" display={["none", "none", "flex", "flex"]}>
             <Link to="/">
               <Image src={logo} />
             </Link>
@@ -123,16 +131,16 @@ const Footer = () => {
           </Flex>
           <Flex justifyContent="space-between" w="18%">
             <a target="blank" href="https://github.com/matinturkaman">
-              <BsGithub fontSize="25px" />
+              <BsGithub fontSize="25px" style={{ marginRight: "30px" }} />
             </a>
             <a
               target="blank"
               href="https://www.linkedin.com/in/matin-turkaman-a9b70b215/"
             >
-              <BsLinkedin fontSize="25px" />
+              <BsLinkedin fontSize="25px" style={{ marginRight: "30px" }} />
             </a>
             <a target="blank" href="https://dribbble.com/matinturkaman">
-              <BsDribbble fontSize="25px" />
+              <BsDribbble fontSize="25px" style={{ marginRight: "30px" }} />
             </a>
             <a target="blank" href="https://www.instagram.com/matinturkaman/">
               <BsInstagram fontSize="25px" />

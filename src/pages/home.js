@@ -27,12 +27,34 @@ const Home = () => {
 
   return (
     <Flex h="80vh" alignItems="center" justifyContent="space-evenly">
-      <Flex flexDirection="column">
+      <Flex
+        alignItems={{
+          base: "center",
+          sm: "center",
+          md: "normal",
+          lg: "normal",
+          xl: "normal",
+        }}
+        textAlign={{
+          base: "center",
+          sm: "center",
+          md: "left",
+          lg: "left",
+          xl: "left",
+        }}
+        flexDirection="column"
+      >
         <HeadingMotion
           initial="hidden"
           animate="visible"
           variants={leftFade}
-          fontSize="60px"
+          fontSize={{
+            base: "45px",
+            sm: "45px",
+            md: "60px",
+            lg: "60px",
+            xl: "60px",
+          }}
           color="#8000FF"
           transition={{ duraction: 0.8, delay: 0.3 }}
         >
@@ -42,7 +64,13 @@ const Home = () => {
           initial="hidden"
           animate="visible"
           variants={leftFade}
-          fontSize="60px"
+          fontSize={{
+            base: "45px",
+            sm: "45px",
+            md: "60px",
+            lg: "60px",
+            xl: "60px",
+          }}
           color="#8000FF"
           transition={{ duraction: 0.8, delay: 0.3 }}
         >
@@ -52,7 +80,13 @@ const Home = () => {
           initial="hidden"
           animate="visible"
           variants={bottomFade}
-          w="330px"
+          w={{
+            base: "250px",
+            sm: "250px",
+            md: "250px",
+            lg: "330px",
+            xl: "330px",
+          }}
           color="#7A7A86"
           transition={{ duraction: 0.4, delay: 0.5 }}
           mt="30px"
@@ -92,7 +126,17 @@ const Home = () => {
           </Button>
         </Flex>
       </Flex>
-      <Flex mt="30px" flexDirection="row">
+      <Flex
+        mt="30px"
+        flexDirection="row"
+        display={{
+          base: "none",
+          sm: "none",
+          md: "none",
+          lg: "flex",
+          xl: "flex",
+        }}
+      >
         <ImageMotion
           initial="hidden"
           animate="visible"

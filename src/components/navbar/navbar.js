@@ -1,7 +1,16 @@
-import { Button, Flex, Image, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import {
+  Button,
+  Flex,
+  Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+} from "@chakra-ui/react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../svg/logo.svg";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const nav = [
@@ -14,13 +23,22 @@ const Navbar = () => {
   return (
     <>
       <Flex>
-        <Image src={logo} />
+        <Link to="/">
+          <Image src={logo} />
+        </Link>
       </Flex>
       <Flex
         initial="hidden"
         animate="visible"
         justifyContent="space-between"
         w="300px"
+        display={{
+          base: "none",
+          sm: "none",
+          md: "flex",
+          lg: "flex",
+          xl: "flex",
+        }}
       >
         {nav.map((n) => {
           return (
@@ -47,7 +65,50 @@ const Navbar = () => {
           );
         })}
       </Flex>
-      <Flex justifyContent="space-between">
+      <Menu>
+        <MenuButton>
+          <Flex
+            cursor="pointer"
+            display={{
+              base: "flex",
+              sm: "flex",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <AiOutlineMenu fontSize="30px" color="#8000FF" />
+          </Flex>
+        </MenuButton>
+        <MenuList zIndex="15">
+          {nav.map((n) => {
+            return (
+              <NavLink
+                to={n.to}
+                exact
+                activeStyle={{
+                  borderBottom: "2px solid #8000FF",
+                  fontWeight: "bold",
+                  color: "#8000FF",
+                  paddingBottom: "15px",
+                }}
+              >
+                <MenuItem key={n.id}>{n.name}</MenuItem>
+              </NavLink>
+            );
+          })}
+        </MenuList>
+      </Menu>
+      <Flex
+        justifyContent="space-between"
+        display={{
+          base: "none",
+          sm: "none",
+          md: "flex",
+          lg: "flex",
+          xl: "flex",
+        }}
+      >
         <Button
           w="95px"
           fontSize="14px"
