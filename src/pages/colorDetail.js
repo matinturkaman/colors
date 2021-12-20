@@ -2,14 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { Box } from "@chakra-ui/layout";
 import { Text, Flex, Button } from "@chakra-ui/react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import {
-  AiOutlineDownload,
-  AiOutlineLink,
-  AiTwotoneLike,
-} from "react-icons/ai";
+import { AiOutlineDownload, AiTwotoneLike } from "react-icons/ai";
 import { Divider } from "@chakra-ui/react";
 import domtoimage from "dom-to-image";
-import palettes from "../data/colors";
+import NotFoundPage from "./notFound";
 
 const ColorDetail = ({ location }) => {
   const [copied, setCopied] = useState(false);
@@ -29,21 +25,27 @@ const ColorDetail = ({ location }) => {
     });
   };
 
+  if (!location.state) {
+    return <NotFoundPage />;
+  }
+
   return (
     <Flex alignItems="center" flexDirection="column">
       <Flex
-        w="435px"
-        h="330px"
+        w={{ base: "300px", sm: "435px", lg: "435px", xl: "435px" }}
+        h={{ base: "280px", sm: "330px", lg: "330px", xl: "330px" }}
         rounded="14px"
         flexDirection="column"
         mt="30px"
-        ml="30px"
         key={location.state.p.id}
       >
         <Box>
-          <Flex h="250px" ref={container}>
+          <Flex
+            h={{ base: "200px", sm: "250px", lg: "250px", xl: "250px" }}
+            ref={container}
+          >
             <Box
-              h="250px"
+              h={{ base: "200px", sm: "250px", lg: "250px", xl: "250px" }}
               rounded="14px 0px 0px 14px"
               flex={1}
               bg={location.state.p.one}
@@ -78,7 +80,7 @@ const ColorDetail = ({ location }) => {
               className="box"
               display="flex"
               alignItems="flex-end"
-              h="250px"
+              h={{ base: "200px", sm: "250px", lg: "250px", xl: "250px" }}
               flex={1}
               bg={location.state.p.two}
             >
@@ -108,7 +110,7 @@ const ColorDetail = ({ location }) => {
               className="box"
               display="flex"
               alignItems="flex-end"
-              h="250px"
+              h={{ base: "200px", sm: "250px", lg: "250px", xl: "250px" }}
               flex={1}
               bg={location.state.p.three}
             >
@@ -135,7 +137,7 @@ const ColorDetail = ({ location }) => {
             </Box>
             <Box
               cursor="pointer"
-              h="250px"
+              h={{ base: "200px", sm: "250px", lg: "250px", xl: "250px" }}
               className="box"
               display="flex"
               alignItems="flex-end"
@@ -166,16 +168,23 @@ const ColorDetail = ({ location }) => {
             </Box>
           </Flex>
         </Box>
-        <Flex h="full" justifyContent="space-between" alignItems="center">
-          <Flex>
+        <Flex
+          h="full"
+          justifyContent={{
+            base: "center",
+            sm: "space-between",
+            lg: "space-between",
+            xl: "space-between",
+          }}
+          alignItems="center"
+        >
+          <Flex justifyContent="space-between" w="230px">
             <Button
               leftIcon={<AiTwotoneLike fontSize="18px" color="#646464" />}
               bg="none"
               border="0.5px solid"
               borderColor="#F0F0F0"
               color="#646464"
-              as="a"
-              ml="15px"
               cursor="pointer"
               rounded="10"
             >
@@ -188,21 +197,29 @@ const ColorDetail = ({ location }) => {
                 border="0.5px solid"
                 borderColor="#F0F0F0"
                 color="#646464"
-                as="a"
-                ml="15px"
                 cursor="pointer"
                 rounded="10"
+                _focus={{}}
               >
                 Image
               </Button>
             </a>
           </Flex>
-          <Text mr="15px" color="#646464" fontWeight="medium">
+          <Text
+            mr="15px"
+            display={{ base: "none", sm: "block", lg: "block", xl: "block" }}
+            color="#646464"
+            fontWeight="medium"
+          >
             9 months
           </Text>
         </Flex>
       </Flex>
-      <Flex pl="25px" w="430px" mt="30" flexDirection="column">
+      <Flex
+        w={{ base: "250px", sm: "430px", lg: "430px", xl: "430px" }}
+        mt="30"
+        flexDirection="column"
+      >
         <Flex w="full" minH="100px" justifyContent="space-between">
           <Box w="40px" h="40px" rounded="50px" bg={location.state.p.one}></Box>
           <Box w="40px" h="40px" rounded="50px" bg={location.state.p.two}></Box>
@@ -221,12 +238,13 @@ const ColorDetail = ({ location }) => {
         </Flex>
         <Divider mt="-30px" />
         <Flex
-          mt="-10px"
+          mt={{ base: "20px", sm: "0px", lg: "0px", xl: "0px" }}
           w="full"
           minH="100px"
           justifyContent="space-between"
           alignItems="center"
           color="#646464"
+          flexDir={{ base: "column", sm: "row", lg: "row", xl: "row" }}
         >
           <CopyToClipboard text={location.state.p.one}>
             <Text>{location.state.p.one}</Text>

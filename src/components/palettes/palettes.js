@@ -213,8 +213,8 @@ const PalettesComp = () => {
                     bg="none"
                     border="0.5px solid"
                     borderColor="#F0F0F0"
+                    _focus={{}}
                     color="#646464"
-                    as="a"
                     ml="15px"
                     cursor="pointer"
                     rounded="10"
@@ -226,9 +226,9 @@ const PalettesComp = () => {
                       leftIcon={<HiViewGrid fontSize="18px" color="#646464" />}
                       bg="none"
                       border="0.5px solid"
+                      _focus={{}}
                       borderColor="#F0F0F0"
                       color="#646464"
-                      as="a"
                       ml="15px"
                       cursor="pointer"
                       rounded="10"

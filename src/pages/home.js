@@ -101,24 +101,24 @@ const Home = () => {
               w="125px"
               bg="#8000FF"
               color="#FFFAED"
-              as="a"
-              cursor="pointer"
               transition=".2s ease-in-out"
               _hover={{ bg: "#6400C8" }}
               _active={{ bg: "#5500AA" }}
+              _focus={{}}
             >
               Get Started
             </Button>
           </Link>
+
           <Button
             rounded="100px"
             w="125px"
             bg="#FFFFFF"
             boxShadow="lg"
             color="#8000FF"
-            as="a"
             cursor="pointer"
             transition=".2s ease-in-out"
+            _focus={{}}
             ml="20px"
             _hover={{}}
           >

@@ -47,70 +47,55 @@ const Footer = () => {
           </Flex>
           <Flex flexDirection="column" mt="20px">
             <Heading fontSize="24">Company</Heading>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Terms of service
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Privacy policy
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Cookie policy
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Help center
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Contact
-              </Text>
-            </Link>
+            <Text color="#B1B1B1" mt="15px">
+              Terms of service
+            </Text>
+
+            <Text color="#B1B1B1" mt="15px">
+              Privacy policy
+            </Text>
+
+            <Text color="#B1B1B1" mt="15px">
+              Cookie policy
+            </Text>
+
+            <Text color="#B1B1B1" mt="15px">
+              Help center
+            </Text>
+
+            <Text color="#B1B1B1" mt="15px">
+              Contact
+            </Text>
           </Flex>
           <Flex flexDirection="column" mt="20px">
             <Heading fontSize="24">Product</Heading>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                iOS app
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Privacy policy
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Adobe addon
-              </Text>
-              <Text color="#B1B1B1" mt="15px">
-                chrome extension
-              </Text>
-            </Link>
+            <Text color="#B1B1B1" mt="15px">
+              iOS app
+            </Text>
+            x
+            <Text color="#B1B1B1" mt="15px">
+              Privacy policy
+            </Text>
+            <Text color="#B1B1B1" mt="15px">
+              Adobe addon
+            </Text>
+            <Text color="#B1B1B1" mt="15px">
+              chrome extension
+            </Text>
           </Flex>
           <Flex flexDirection="column" mt="20px">
             <Heading fontSize="24">Account</Heading>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Sign in
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Sign up
-              </Text>
-            </Link>
-            <Link to="/">
-              <Text color="#B1B1B1" mt="15px">
-                Reset password
-              </Text>
-            </Link>
+            <Text color="#B1B1B1" mt="15px">
+              Sign in
+            </Text>
+
+            <Text color="#B1B1B1" mt="15px">
+              Sign up
+            </Text>
+
+            <Text color="#B1B1B1" mt="15px">
+              Reset password
+            </Text>
           </Flex>
         </Flex>
         <Flex justifyContent="space-between" alignItems="center" mt="20px">
@@ -122,11 +107,11 @@ const Footer = () => {
               <Text color="#333333" fontWeight="medium">
                 © {new Date().getFullYear()} color by
               </Text>
-              <a target="blank" href="https://github.com/matinturkaman">
-                <Text color="#8000FF" fontWeight="bold" ml="5px">
+              <Text color="#8000FF" fontWeight="bold" ml="5px">
+                <a target="blank" href="https://github.com/matinturkaman">
                   matin turkaman
-                </Text>
-              </a>
+                </a>
+              </Text>
             </Flex>
           </Flex>
           <Flex justifyContent="space-between" w="18%">

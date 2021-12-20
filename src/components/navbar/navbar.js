@@ -65,8 +65,24 @@ const Navbar = () => {
           );
         })}
       </Flex>
-      <Menu>
-        <MenuButton>
+      <Menu
+        display={{
+          base: "flex",
+          sm: "flex",
+          md: "none",
+          lg: "none",
+          xl: "none",
+        }}
+      >
+        <MenuButton
+          display={{
+            base: "flex",
+            sm: "flex",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          }}
+        >
           <Flex
             cursor="pointer"
             display={{
@@ -80,20 +96,28 @@ const Navbar = () => {
             <AiOutlineMenu fontSize="30px" color="#8000FF" />
           </Flex>
         </MenuButton>
-        <MenuList zIndex="15">
+        <MenuList
+          flexDir="column"
+          display={{
+            base: "flex",
+            sm: "flex",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          }}
+          zIndex="15"
+        >
           {nav.map((n) => {
             return (
               <NavLink
+                key={n.id}
                 to={n.to}
                 exact
                 activeStyle={{
-                  borderBottom: "2px solid #8000FF",
-                  fontWeight: "bold",
                   color: "#8000FF",
-                  paddingBottom: "15px",
                 }}
               >
-                <MenuItem key={n.id}>{n.name}</MenuItem>
+                <MenuItem>{n.name}</MenuItem>
               </NavLink>
             );
           })}
@@ -115,9 +139,9 @@ const Navbar = () => {
           background="#8000FF"
           borderRadius="50px"
           color="white"
-          as="a"
           cursor="pointer"
           _hover={{ bg: "#6400C8" }}
+          _focus={{}}
           _active={{ bg: "#5500AA" }}
         >
           Sign up
@@ -129,8 +153,9 @@ const Navbar = () => {
           background="none"
           borderColor="#8000FF"
           borderRadius="50px"
+          color="#8000FF"
           ml="15px"
-          as="a"
+          _focus={{}}
           cursor="pointer"
           _hover={{ bg: "none" }}
         >
