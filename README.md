@@ -1,3 +1,14 @@
+# features
+
+.1 explore
+.2 template
+.3 404 not found page
+.4 color detail (view)
+.5 download palette as image
+.6 copy color code
+.7 full responsive
+.8 about page
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
