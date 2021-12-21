@@ -72,7 +72,7 @@ const PalettesComp = () => {
           </Text>
         </Flex>
         <InputGroup
-          w={{ base: "100%", sm: "100%", md: "30%", lg: "30%", xl: "30%" }}
+          w={{ base: "100%", sm: "100%", md: "20%", lg: "20%", xl: "20%" }}
         >
           <InputLeftElement children={<FiSearch color="#7A7A86" />} />
           <Input
@@ -83,7 +83,12 @@ const PalettesComp = () => {
           />
         </InputGroup>
       </Flex>
-      <Flex w="90%" minH="300px" flexWrap="wrap" justifyContent="space-evenly">
+      <Flex
+        w={{ base: "90%", sm: "90%", lg: "100%", xl: "100%" }}
+        minH="300px"
+        flexWrap="wrap"
+        justifyContent="space-evenly"
+      >
         {allPalette.map((p) => {
           return (
             <Flex
@@ -219,7 +224,7 @@ const PalettesComp = () => {
                     cursor="pointer"
                     rounded="10"
                   >
-                    3,456
+                    {p.like}
                   </Button>
                   <Link to={{ pathname: `/palette/${p.id}`, state: { p } }}>
                     <Button
@@ -243,12 +248,12 @@ const PalettesComp = () => {
                   fontWeight="medium"
                   display={{ base: "none", sm: "flex", lg: "flex", xl: "flex" }}
                 >
-                  9 months
+                  {p.date}
                 </Text>
               </Flex>
             </Flex>
-          );
-        })}
+          )
+          })}
       </Flex>
     </>
   );
