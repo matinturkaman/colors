@@ -72,7 +72,6 @@ const Footer = () => {
             <Text color="#B1B1B1" mt="15px">
               iOS app
             </Text>
-            x
             <Text color="#B1B1B1" mt="15px">
               Privacy policy
             </Text>
