@@ -779,6 +779,36 @@ const palettes = [
     date: "2 days",
     id: 77,
   },
+  {
+    one: "#FF0075",
+    two: "#172774",
+    three: "#77D970",
+    four: "#EEEEEE",
+    category: "pink",
+    like: "12,023",
+    date: "1 days",
+    id: 78,
+  },
+  {
+    one: "#F0A500",
+    two: "#334756",
+    three: "#082032",
+    four: "#000000",
+    category: "orange",
+    like: "81,023",
+    date: "1 weeks",
+    id: 79,
+  },
+  {
+    one: "#FFB319",
+    two: "#FFE194",
+    three: "#E8F6EF",
+    four: "#B8DFD8",
+    category: "yellow",
+    like: "1,263",
+    date: "8 hourse",
+    id: 80,
+  },
 ];
 
 export default palettes;
