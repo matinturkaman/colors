@@ -4,6 +4,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import TempData from "../data/temp";
 
 const Temp = () => {
+  
   const [copied, setCopied] = useState(false);
 
   const toggleCopy = () => {
